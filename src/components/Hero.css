@@ -119,6 +119,16 @@
   animation: heroEntry 0.8s ease both;
 }
 
+.hero-brand-logo {
+  display: block;
+  width: min(560px, 90vw);
+  height: 190px;
+  margin: 0 auto 18px;
+  object-fit: cover;
+  object-position: center;
+  mix-blend-mode: multiply;
+}
+
 .hero-label {
   display: inline-flex;
   align-items: center;
@@ -521,6 +531,11 @@
 
   .hero-heading {
     margin-bottom: 35px;
+  }
+
+  .hero-brand-logo {
+    width: min(440px, 92vw);
+    height: 150px;
   }
 
   .hero-title {

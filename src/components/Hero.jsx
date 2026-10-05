@@ -68,6 +68,11 @@ function Hero() {
       <div className="hero-container">
 
         <div className="hero-heading">
+          <img
+            className="hero-brand-logo"
+            src="/self-tracker-logo.png"
+            alt="Self Tracker: Elevate Your Progress"
+          />
           <p className="hero-label">PERSONAL TRACKER</p>
 
           <h1 className="hero-title">
