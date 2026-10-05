@@ -1,0 +1,41 @@
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Global soft page texture */
+
+#root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: -2;
+
+  opacity: 0.35;
+
+  background-image:
+    linear-gradient(
+      rgba(99, 102, 241, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(99, 102, 241, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 42px 42px;
+}
+
+/* Smooth route/page rendering */
+
+main {
+  position: relative;
+  isolation: isolate;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.2);
+}

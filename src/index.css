@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+
+  color: #26324a;
+  background: #f6f8ff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --font-heading: "Space Grotesk", sans-serif;
+
+  --text-main: #26324a;
+  --text-muted: #6f7a91;
+
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-solid: #ffffff;
+
+  --border: rgba(110, 125, 160, 0.16);
+
+  --shadow-sm:
+    0 8px 25px rgba(77, 91, 125, 0.08);
+
+  --shadow-md:
+    0 18px 45px rgba(77, 91, 125, 0.13);
+
+  --shadow-lg:
+    0 28px 70px rgba(77, 91, 125, 0.17);
+
+  --radius-lg: 24px;
+  --radius-md: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(167, 139, 250, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(56, 189, 248, 0.15),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 90%,
+      rgba(45, 212, 191, 0.12),
+      transparent 30%
+    ),
+    #f6f8ff;
+
+  color: var(--text-main);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: #c4b5fd;
+  color: #312e81;
+}
+
+/* --------------------------------------------------
+   GLOBAL ANIMATED BACKGROUND
+-------------------------------------------------- */
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.45;
+}
+
+body::before {
+  width: 280px;
+  height: 280px;
+
+  top: 12%;
+  left: -100px;
+
+  background: rgba(129, 140, 248, 0.32);
+
+  animation: floatingOrbOne 14s ease-in-out infinite alternate;
+}
+
+body::after {
+  width: 320px;
+  height: 320px;
+
+  right: -120px;
+  bottom: 5%;
+
+  background: rgba(45, 212, 191, 0.25);
+
+  animation: floatingOrbTwo 17s ease-in-out infinite alternate;
+}
+
+@keyframes floatingOrbOne {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(80px, 70px, 0);
+  }
+
+  100% {
+    transform: translate3d(20px, 140px, 0);
+  }
+}
+
+@keyframes floatingOrbTwo {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-80px, -50px, 0);
+  }
+
+  100% {
+    transform: translate3d(-30px, -120px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body::before,
+  body::after {
+    animation: none;
+  }
+}
